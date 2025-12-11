@@ -77,6 +77,7 @@ func (app *Application) ScrapeHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(resp)
+	app.Logger.Info("Scraping Terminado com sucesso", slog.String("url", targetURL))
 }
 
 // Converte suas structs internas para JSON amigável

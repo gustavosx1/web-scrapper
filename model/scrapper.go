@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/url"
+	"strings"
 
 	"github.com/gocolly/colly/v2"
 )
@@ -20,8 +21,9 @@ func Scrapper(url string) (LinkList, LinkList) {
 	var goodLinks LinkList
 	var badLinks LinkList
 
+	dominios := strings.Split(url, "/")
 	c := colly.NewCollector(
-		colly.AllowedDomains("scrape-me.dreamsofcode.io"),
+		colly.AllowedDomains(dominios[2]),
 	)
 
 	// Coletar cada link encontrado

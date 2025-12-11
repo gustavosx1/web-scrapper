@@ -11,4 +11,5 @@ func main() {
 	api.API()
 
 	request.Request(URL)
+	// depois de terminado que eu parei pra pensar que isso aqui não faz sentido algum
 }
